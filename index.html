@@ -1118,18 +1118,18 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.07);padding:
 </footer>
 
 <!-- WHATSAPP FLOAT -->
-<<a href="https://wa.me/256785314156" class="wa-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
+<a href="https://wa.me/256785314156" class="wa-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
   <i class="ti ti-brand-whatsapp"></i>
 </a>
 
 <script>
-/* ── CONFIG ─────────────────────────── */
+/* ── EMAILJS CONFIG ─────────────────── */
 emailjs.init('GnY-FytRDqRBqoi4');
 const EJS_SERVICE  = 'service_Wix';
 const EJS_TEMPLATE = 'template_8kqmkb7';
 const today = new Date().toISOString().split('T')[0];
 document.querySelectorAll('input[type=date]').forEach(el => el.min = today);
-
+ 
 /* ── NAV ────────────────────────────── */
 window.addEventListener('scroll', () => {
   document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 60);
@@ -1137,13 +1137,13 @@ window.addEventListener('scroll', () => {
 document.getElementById('ham').addEventListener('click', () => document.getElementById('mobNav').classList.toggle('open'));
 document.getElementById('mobClose').addEventListener('click', () => document.getElementById('mobNav').classList.remove('open'));
 function closeMob(){ document.getElementById('mobNav').classList.remove('open'); }
-
+ 
 /* ── REVEAL ON SCROLL ───────────────── */
 const revealObs = new IntersectionObserver((entries) => {
   entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-
+ 
 /* ── FLEET FILTER ───────────────────── */
 document.querySelectorAll('.ftab').forEach(btn => {
   btn.addEventListener('click', function(){
@@ -1155,8 +1155,8 @@ document.querySelectorAll('.ftab').forEach(btn => {
     });
   });
 });
-
-/* ── VEHICLE SELECTOR (booking form) ── */
+ 
+/* ── VEHICLE SELECTOR ───────────────── */
 let selVeh = { name: 'Toyota Prado', rate: 145 };
 document.querySelectorAll('.vc').forEach(card => {
   card.addEventListener('click', () => selVeh = selectVeh(card));
@@ -1168,8 +1168,8 @@ function selectVeh(el){
   const v = { name: el.dataset.v, rate: parseInt(el.dataset.r) };
   updateSummary(); return v;
 }
-
-/* ── SUMMARY ────────────────────────── */
+ 
+/* ── COST SUMMARY ───────────────────── */
 function getDays(p,d){ if(!p||!d) return 0; const diff=(new Date(d)-new Date(p))/86400000; return diff>0?Math.round(diff):0; }
 function updateSummary(){
   const days = getDays(document.getElementById('bk-pickup').value, document.getElementById('bk-dropoff').value);
@@ -1182,7 +1182,7 @@ function updateSummary(){
   document.getElementById('s-tot').textContent = days>0 ? '$'+total : '—';
 }
 ['bk-pickup','bk-dropoff','bk-driver'].forEach(id => document.getElementById(id).addEventListener('change', updateSummary));
-
+ 
 /* ── TOAST ──────────────────────────── */
 function toast(id, msg, type){
   const t = document.getElementById(id);
@@ -1192,7 +1192,7 @@ function toast(id, msg, type){
   t.scrollIntoView({behavior:'smooth',block:'nearest'});
   setTimeout(()=>{ t.className='f-toast'; },6000);
 }
-
+ 
 /* ── VALIDATE ───────────────────────── */
 function validate(fields){
   let ok = true;
@@ -1205,7 +1205,7 @@ function validate(fields){
   });
   return ok;
 }
-
+ 
 /* ── EMAILJS SEND ───────────────────── */
 async function sendBooking(payload, btnId, spinnerId, iconId, txtId, toastId){
   const btn = document.getElementById(btnId);
@@ -1233,7 +1233,7 @@ async function sendBooking(payload, btnId, spinnerId, iconId, txtId, toastId){
     btn.style.background = '#065f46';
   } catch(err) {
     console.error('EmailJS error:', err);
-    toast(toastId, 'Could not send — please try WhatsApp or email us directly.', 'err');
+    toast(toastId, 'Could not send — please WhatsApp or email us directly.', 'err');
     resetBtn(btn, spinnerId, iconId, txtId);
   }
 }
@@ -1243,7 +1243,7 @@ function resetBtn(btn, spinnerId, iconId, txtId){
   document.getElementById(iconId).style.display='inline';
   document.getElementById(txtId).textContent='Send Booking Confirmation';
 }
-
+ 
 /* ── MAIN BOOKING FORM ──────────────── */
 document.getElementById('bkBtn').addEventListener('click', () => {
   const required = ['bk-fn','bk-ln','bk-email','bk-pickup','bk-dropoff','bk-loc'];
@@ -1268,7 +1268,7 @@ document.getElementById('bkBtn').addEventListener('click', () => {
     total:     (selVeh.rate+(drv?30:0))*days
   }, 'bkBtn','bk-spin','bk-icon','bk-txt','bk-toast');
 });
-
+ 
 /* ── HERO QUICK FORM ────────────────── */
 function submitHero(){
   const fn=document.getElementById('hb-fn').value.trim();
@@ -1279,7 +1279,7 @@ function submitHero(){
   const vt=document.getElementById('hb-vtype').value;
   const loc=document.getElementById('hb-loc').value;
   if(!fn||!ln){ toast('hb-toast','Please enter your full name.','err'); return; }
-  if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ toast('hb-toast','Please enter a valid email.','err'); return; }
+  if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ toast('hb-toast','Please enter a valid email address.','err'); return; }
   if(!pickup||!dropoff){ toast('hb-toast','Please select travel dates.','err'); return; }
   if(!vt||!loc){ toast('hb-toast','Please select a vehicle and location.','err'); return; }
   const days=getDays(pickup,dropoff);
@@ -1303,14 +1303,14 @@ function submitHero(){
     btn.innerHTML='<i class="ti ti-circle-check"></i> Sent!';
     btn.style.background='#065f46';
   }).catch(() => {
-    toast('hb-toast','Could not send. Please try WhatsApp or email us.','err');
+    toast('hb-toast','Could not send. Please WhatsApp or email us.','err');
     btn.disabled=false;
     document.getElementById('hb-spinner').style.display='none';
     document.getElementById('hb-icon').style.display='inline';
     document.getElementById('hb-txt').textContent='Reserve My Vehicle';
   });
 }
-
+ 
 /* ── FLEET CARD → BOOKING FORM ──────── */
 function scrollToBook(vehicle, rate){
   document.querySelectorAll('.vc').forEach(c=>{
@@ -1318,7 +1318,7 @@ function scrollToBook(vehicle, rate){
   });
   document.getElementById('book').scrollIntoView({behavior:'smooth'});
 }
-
+ 
 /* ── CONTACT FORM ───────────────────── */
 function submitContact(){
   const name=document.getElementById('cf-name').value.trim();
@@ -1330,5 +1330,6 @@ function submitContact(){
   window.location.href=`mailto:info@wixcarrentals.com?subject=${sub}&body=${body}`;
 }
 </script>
+
 </body>
 </html>
