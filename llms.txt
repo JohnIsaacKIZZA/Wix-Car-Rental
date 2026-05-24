@@ -1,0 +1,65 @@
+# Wix Car Rentals Uganda
+
+> Uganda's trusted car rental agency since 2008. Self-drive and guided tours from Kampala. SUVs, 4x4s, pickups and more from $50/day.
+
+Wix Car Rentals is a Kampala-based car rental company offering self-drive and chauffeur-driven vehicles for tourists, business travellers, NGOs, and locals across Uganda. The company has operated since 2008 and serves clients globally through its Akamwesi Complex office in Kampala.
+
+## Business Information
+
+- **Company:** Wix Car Rentals Uganda Ltd
+- **Founded:** 2008
+- **Location:** Akamwesi Complex, 3rd Floor, Office 30, Kampala, Uganda
+- **Phone:** +256 393 265 377 / +256 772 350 700
+- **WhatsApp:** +256 785 314 156
+- **Email:** info@wixcarrentals.com
+- **Website:** https://wix-car-rental-try4.vercel.app
+- **Operating hours:** Monday–Saturday, 8:00am–5:00pm. Closed Sundays and public holidays.
+
+## Fleet
+
+All vehicles include air conditioning, full tank, luggage capacity, and comprehensive insurance. Unlimited mileage on all rentals.
+
+- **Toyota Prado** — Premium class, 7 seats, automatic, gasoline. $145/day
+- **Toyota Hilux** — Pickup class, 5 seats, automatic, gasoline. $120/day
+- **Hyundai Santa Fe** — SUV class, 5 seats, automatic, gasoline. $100/day
+- **Hyundai Tucson** — Crossover class, 5 seats, automatic, gasoline. $85/day
+- **Hyundai Sonata** — Large class, 5 seats, automatic, gasoline. $55/day
+- **Hyundai Elantra** — Medium class, 5 seats, automatic, gasoline. $50/day
+
+Optional professional driver available on any vehicle for +$30/day.
+
+## Services
+
+- **Self Drive** — Vehicles rented without a driver. Road maps and 24/7 phone support included.
+- **Airport Transfers** — Pickups and drop-offs at Entebbe International Airport. Meet-and-greet available.
+- **Chauffeur / Driver Service** — Professional vetted drivers for business travel, weddings, and tours.
+- **Safari & Game Park** — 4x4 vehicles for Bwindi, Queen Elizabeth, Murchison Falls, and other parks.
+- **Corporate Rental** — Fleet management, invoicing, and priority bookings for NGOs, embassies, and enterprises via the Enterprise Friendly-Rent program.
+- **Long-Term Leasing** — Weekly and monthly rates for extended projects and long-term assignments.
+
+## Booking Process
+
+1. Choose a vehicle class from the fleet
+2. Fill in travel dates, pick-up location, and contact details
+3. Receive instant email confirmation
+4. Team follows up within 12 hours to finalise
+5. Collect vehicle fully fuelled and insured at the agreed location
+
+Pick-up locations: Entebbe International Airport, Kampala City Centre, Akamwesi Complex Office.
+
+## Key Policies
+
+- No payment required at booking stage
+- Free cancellation up to 24 hours before pickup
+- Comprehensive insurance included on all vehicles
+- Unlimited mileage on all rentals
+- No hidden charges — transparent all-inclusive pricing
+- 24/7 roadside assistance
+
+## Technology
+
+- Single-page website built with HTML, CSS, and vanilla JavaScript
+- Hosted on Vercel
+- Booking confirmations sent via EmailJS (no backend server)
+- EmailJS Service ID: service_Wix | Template ID: template_8kqmkb7
+- Developed by Lutwama JohnIsaac KIZZA
